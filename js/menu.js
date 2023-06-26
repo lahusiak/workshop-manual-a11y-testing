@@ -1,32 +1,41 @@
 function load() {
-    const menuItems = Array.from(document.querySelectorAll('.megamenu-navitem'))
-    const submenus = Array.from(document.querySelectorAll('.megamenu-section'))
+    const menuItems = Array.from(document.querySelectorAll('.megamenu-navitem'));
+    const submenuItems = Array.from(document.querySelectorAll('.megamenu-section'));
+    
 
     function resetSubmenus(event) {
-        var activeSubmenu = document.querySelector('.megamenu-section.active')
-        if (activeSubmenu && !activeSubmenu.contains(event.target)) {
+        let activeSubmenu = document.querySelector('.megamenu-section.active');
+        console.log('in reset menu' + activeSubmenu);
+        console.log('event ' + event.code);
+        if (activeSubmenu && !activeSubmenu.contains(event.target) || activeSubmenu && event.code === 'Escape') {
             activeSubmenu.classList.remove('active')
         }
+
     }
-
+    
     menuItems.forEach((menuItem, index) => {
-        let parentElement = menuItem.parentNode
         menuItem.addEventListener('click', function(event) {
-            console.log(menuItem)
-            resetSubmenus(event)
-
-            // Add active menu for the item clicked
-            if(!parentElement.classList.contains('active')) {
-                parentElement.classList.add('active')
-
+            let parent = menuItem.parentNode;
+            if (parent.classList.contains('active')) {
+                parent.classList.remove('active')
             } else {
-                parentElement.classList.remove('active')
+                parent.classList.add('active')
+            }
+        })  
+    })
+
+    submenuItems.forEach((subItem, index) => {
+        subItem.addEventListener('keyup', function(event) {
+            if (event.code === 'Escape' && subItem.classList.contains('active')) {
+                subItem.classList.remove('active');
+                subItem.querySelector('.megamenu-navitem').focus();
             }
         })
     })
-
+    //Helps close the menus once you leave the nav area
     document.addEventListener('click', (event) => {
-        resetSubmenus(event)
+        resetSubmenus(event);
     })
 }
+
 document.addEventListener('DOMContentLoaded', load)

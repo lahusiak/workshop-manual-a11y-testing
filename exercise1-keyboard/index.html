@@ -8,14 +8,15 @@
     <body class="page-home">
         <include src="./exercise1-keyboard/_includes/header.html"></include>
         <div id="main">
-            <div class="main-search form-wrap layout" id="home-form">
-                <div class="form-field">
-                    <span class="label">Where to?</span>
-                    <div class="custom-input">
-                        <span class="icon-lookingglass"></span>
-                        <input type="text" placeholder="Try Oregon, Colorado..." />
+            <form class="main-search form-wrap layout" id="home-form">
+                <fieldset class="form-field">
+                    <label class="label">Where to?
+                        <div class="custom-input">
+                            <span class="icon-lookingglass"></span>
+                            <input type="text" placeholder="Try Oregon, Colorado..." />
+                    />
                     </div>
-                </div>
+                </fieldset>
                 <div class="form-field">
                     <span class="label">Dates</span>
                     <div class="custom-input">
@@ -28,7 +29,7 @@
                         <span class="icon-lookingglass-white"></span>
                     </button>
                 </div>
-            </div>
+            </form>
             <div class="wide-layout two-part-overlap">
                 <div class="content-block-wrap">
                     <img src="/images/tents.jpg">

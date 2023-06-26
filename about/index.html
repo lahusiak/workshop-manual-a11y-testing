@@ -17,20 +17,20 @@
                 </div>
                 <img src="/images/about-image.jpg" />
             </div>
-            <div class="form-wrap">
+            <form class="form-wrap">
                 <div class="layout two-parts-60-40">
-                    <div>
-                        <h2>Contact</h2>
+                    <fieldset>
+                        <legend><h2>Contact</h2></legend>
                         <div class="form">
-                            <h6 class="label">Message</h6>
+                            <label for="message" class="label">Message</label>
                             <div class="form-field">
-                                <textarea placeholder="Type your message here..."></textarea>
+                                <textarea id="message" placeholder="Type your message here..."></textarea>
                             </div>
                             <div class="form-submit">
-                                <div class="btn-send">Send<span class="icon-arrow"></span></div>
+                                <button class="btn-send">Send<span class="icon-arrow"></span></button>
                             </div>
                         </div>
-                    </div>
+                    </fieldset>
                     <div>
                         <div class="content-block">
                             <h4>Email</h4>
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
         <script src="/js/menu.js"></script>
     </body>

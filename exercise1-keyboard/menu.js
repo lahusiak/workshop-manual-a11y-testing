@@ -12,7 +12,6 @@ function load() {
         let parentElement = menuItem.parentNode
         menuItem.addEventListener('click', function(event) {
             resetSubmenus(event)
-
             // Add active menu for the item clicked
             if(!parentElement.classList.contains('active')) {
                 parentElement.classList.add('active')
